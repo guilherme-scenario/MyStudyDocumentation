@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav_graph"
+    app:startDestination="@id/helloFragment">
+
+    <fragment
+        android:id="@+id/helloFragment"
+        android:name="com.gvfs.mystudydocumentation.hello.HelloFragment"
+        android:label="fragment_hello"
+        tools:layout="@layout/fragment_hello">
+        <action
+            android:id="@+id/action_helloFragment_to_goodMorningFragment"
+            app:destination="@id/goodMorningFragment" />
+        <argument
+            android:name="myArg1"
+            app:argType="string"
+            android:defaultValue=""/>
+    </fragment>
+    <fragment
+        android:id="@+id/goodMorningFragment"
+        android:name="com.gvfs.mystudydocumentation.goodmorning.GoodMorningFragment"
+        android:label="fragment_good_morning"
+        tools:layout="@layout/fragment_good_morning">
+        <action
+            android:id="@+id/action_goodMorningFragment_to_byeFragment"
+            app:destination="@id/byeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/byeFragment"
+        android:name="com.gvfs.mystudydocumentation.bye.ByeFragment"
+        android:label="fragment_bye"
+        tools:layout="@layout/fragment_bye" >
+        <action
+            android:id="@+id/action_byeFragment_to_helloFragment"
+            app:destination="@id/helloFragment" />
+    </fragment>
+
+</navigation>
