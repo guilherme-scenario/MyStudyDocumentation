@@ -50,6 +50,11 @@ class HelloFragment : Fragment() {
                 }
             }
         }
+
+        val btnUsers = view.findViewById<Button>(R.id.btn_call_user_list)
+        btnUsers.setOnClickListener {
+            view.findNavController().navigate(R.id.action_helloFragment_to_userListFragment)
+        }
     }
 
 

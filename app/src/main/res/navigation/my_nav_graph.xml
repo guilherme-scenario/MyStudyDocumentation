@@ -17,6 +17,9 @@
             android:name="myArg1"
             app:argType="string"
             android:defaultValue=""/>
+        <action
+            android:id="@+id/action_helloFragment_to_userListFragment"
+            app:destination="@id/userListFragment" />
     </fragment>
     <fragment
         android:id="@+id/goodMorningFragment"
@@ -36,5 +39,10 @@
             android:id="@+id/action_byeFragment_to_helloFragment"
             app:destination="@id/helloFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/userListFragment"
+        android:name="com.gvfs.mystudydocumentation.userlist.UserListFragment"
+        android:label="fragment_user_list"
+        tools:layout="@layout/fragment_user_list" />
 
 </navigation>
