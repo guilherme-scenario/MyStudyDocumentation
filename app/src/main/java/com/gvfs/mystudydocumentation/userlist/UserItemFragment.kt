@@ -14,7 +14,7 @@ import com.gvfs.mystudydocumentation.databinding.UserItemBinding
 import com.gvfs.mystudydocumentation.domain.User
 import androidx.viewpager2.widget.ViewPager2
 
-class UserListFragment : Fragment() {
+class UserItemFragment : Fragment() {
 
     private val viewModel: UserListViewModel by viewModels()
     private val dao = UserDao();

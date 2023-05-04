@@ -1,12 +1,9 @@
 package com.gvfs.mystudydocumentation.userlist
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.gvfs.mystudydocumentation.databinding.FragmentUserListBinding
 import com.gvfs.mystudydocumentation.databinding.UserItemBinding
-import com.gvfs.mystudydocumentation.databinding.UsersListBinding
 import com.gvfs.mystudydocumentation.domain.User
 
 class UserListAdapter(
@@ -15,7 +12,7 @@ class UserListAdapter(
 
     private val users =users.toMutableList()
 
-    inner class ViewHolder(private val binder: UserItemBinding) : RecyclerView.ViewHolder(binder.root) {
+    class ViewHolder(val binder: UserItemBinding) : RecyclerView.ViewHolder(binder.root) {
 
         fun bindUsers(user: User) {
             val name = binder.userItemNome
@@ -34,12 +31,8 @@ class UserListAdapter(
 
     override fun onBindViewHolder(holder: UserListAdapter.ViewHolder, position: Int) {
          val user = users[position]
-         holder.bindUsers(user)
+        holder.bindUsers(user)
+        holder.binder.userItemNome.text = user.name
     }
 
-    fun updateUsers(newUsers: List<User>) {
-        users.clear()
-        users.addAll(newUsers)
-        notifyDataSetChanged()
-    }
 }
