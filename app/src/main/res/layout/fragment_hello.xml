@@ -2,8 +2,8 @@
 <layout>
     <data>
         <variable
-            name="teste"
-            type="String" />
+            name="viewModel"
+            type="com.gvfs.mystudydocumentation.hello.HelloViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -32,7 +32,7 @@
             android:textAlignment="center"
             android:textSize="30sp"
             app:layout_constraintTop_toBottomOf="@+id/text_hello"
-            android:text="@{teste}" />
+            android:text="@{viewModel.user.name}" />
 
         <Button
             android:id="@+id/btn_call_good_morning"
