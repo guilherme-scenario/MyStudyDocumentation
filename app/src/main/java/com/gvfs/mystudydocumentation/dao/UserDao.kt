@@ -14,19 +14,29 @@ class UserDao {
     companion object {
         private val users = mutableListOf<User>(
             User(
-                "guilherme",
+                "Guilherme",
+                "guilherme@mail.com",
+                "123456"
             ),
             User(
-                "josé",
+                "José",
+                "jose@mail.com",
+                "123456"
             ),
             User(
-                "maria",
+                "Maria",
+                "maria@mail.com",
+                "123456"
             ),
             User(
-                "joão",
+                "João",
+                "joao@mail.com",
+                "123456"
             ),
             User(
-                "ana",
+                "Ana",
+                "ana@mail.com",
+                "123456"
             ),
         )
     }

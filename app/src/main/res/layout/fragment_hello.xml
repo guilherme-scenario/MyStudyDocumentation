@@ -4,6 +4,9 @@
         <variable
             name="viewModel"
             type="com.gvfs.mystudydocumentation.hello.HelloViewModel" />
+        <variable
+            name="isAuthenticated"
+            type="Boolean" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"

@@ -16,7 +16,9 @@ class UserListAdapter(
 
         fun bindUsers(user: User) {
             val name = binder.userItemNome
+            val email = binder.userItemNome
             name.text = user.name
+            email.text = user.email
         }
     }
 

@@ -11,9 +11,9 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.snackbar.Snackbar
 import com.gvfs.mystudydocumentation.R
+import com.gvfs.mystudydocumentation.alert.AlertEvent
 import com.gvfs.mystudydocumentation.databinding.FragmentHelloBinding
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.lifecycle.HiltViewModel
 
 @AndroidEntryPoint
 class HelloFragment : Fragment() {
@@ -41,11 +41,11 @@ class HelloFragment : Fragment() {
         btn.setOnClickListener {
             view.findNavController().navigate(R.id.action_helloFragment_to_goodMorningFragment)
         }
-        viewModel.findName(args.myArg1)
+        viewModel.findByEmail(args.myArg1)
 
         viewModel.events.observe(viewLifecycleOwner) { event ->
             when (event) {
-                is HelloEvent.UserNotFound -> {
+                is AlertEvent.UserNotFound -> {
                     Snackbar.make(view, event.message, Snackbar.LENGTH_LONG).show()
                 }
             }

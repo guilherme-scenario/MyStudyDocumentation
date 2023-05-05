@@ -2,7 +2,7 @@ package com.gvfs.mystudydocumentation.hello
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.google.android.material.snackbar.Snackbar
+import com.gvfs.mystudydocumentation.alert.AlertEvent
 import com.gvfs.mystudydocumentation.domain.User
 import com.gvfs.mystudydocumentation.service.UserService
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -12,12 +12,12 @@ import javax.inject.Inject
 class HelloViewModel @Inject constructor(private val userService: UserService): ViewModel() {
 
     val user: MutableLiveData<User?> = MutableLiveData()
-    val events: MutableLiveData<HelloEvent> = MutableLiveData()
+    val events: MutableLiveData<AlertEvent> = MutableLiveData()
 
-    fun findName(name:String) {
-        val existUser = userService.findName(name)
+    fun findByEmail(email:String) {
+        val existUser = userService.findByEmail(email)
         if (existUser == null)
-            events.value = HelloEvent.UserNotFound("Usuário não encontrado")
+            events.value = AlertEvent.UserNotFound()
         else user.value = existUser
     }
 }
